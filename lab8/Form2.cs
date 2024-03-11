@@ -55,7 +55,19 @@ namespace lab8
 
         private void dgvClasses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
+
+        private void dgvClasses_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvClasses.Rows.Count)
+            {
+                string subjectId = dgvClasses.Rows[e.RowIndex].Cells["subject_id"].Value?.ToString();
+                string classId = dgvClasses.Rows[e.RowIndex].Cells["class_id"].Value?.ToString();
+
+                MessageBox.Show($"Subject ID: {subjectId}\nClass ID: {classId}", "Row Details");
+            }
+        }
+
     }
 }

@@ -102,6 +102,7 @@
             this.dgvClasses.Size = new System.Drawing.Size(244, 154);
             this.dgvClasses.TabIndex = 8;
             this.dgvClasses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasses_CellContentClick_1);
+            this.dgvClasses.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvClasses_RowHeaderMouseDoubleClick);
             // 
             // FormPersonalPage
             // 
