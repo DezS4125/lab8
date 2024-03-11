@@ -13,11 +13,12 @@ namespace lab8
 {
     public partial class FormLogin : Form
     {
-        string staff_id;
-        string password;
+        string staff_id="001";
+        string password="123";
         public FormLogin()
         {
             InitializeComponent();
+            btnConfirm.Focus();
         }
 
         private void txtStaffID_TextChanged(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace lab8
                 clsDatabase.closeConnection();
                 if (result)
                 {
-                    MessageBox.Show("Login successful!","Success!", MessageBoxButtons.OK);
+                    // MessageBox.Show("Login successful!","Success!", MessageBoxButtons.OK);
                     this.Hide();
                     FormPersonalPage personalpage = new FormPersonalPage(staff_id);
                     personalpage.ShowDialog();

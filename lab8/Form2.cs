@@ -34,37 +34,26 @@ namespace lab8
             clsDatabase.openConnection();
             SqlCommand com = new SqlCommand("select subject_id, class_id from teach where staff_id=@staffID", clsDatabase.con);
             SqlParameter p1 = new SqlParameter("@staffID", SqlDbType.NVarChar);
-            p1.Value = this.staff_id;
+            p1.Value = staff_id;
             com.Parameters.Add(p1);
-            txtStaffName.Text = (string)com.ExecuteScalar();
             SqlDataReader reader = com.ExecuteReader();
-
-            lvClasses.View = View.Details;
-            lvClasses.Columns.Add("Subject ID");
-            lvClasses.Columns.Add("Class ID");
-
-            while (reader.Read())
-            {
-                ListViewItem item = new ListViewItem(reader["subject_id"].ToString());
-                item.SubItems.Add(reader["class_id"].ToString());
-                lvClasses.Items.Add(item);
-            }
-
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            dgvClasses.DataSource = dataTable;
+            dgvClasses.Columns["subject_id"].HeaderText = "Subject";
+            dgvClasses.Columns["class_id"].HeaderText = "Class";
             reader.Close();
             clsDatabase.closeConnection();
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void FormPersonalPage_Load(object sender, EventArgs e)
         {
 
         }
-        private void lvClasses_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void dgvClasses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
