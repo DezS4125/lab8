@@ -8,6 +8,8 @@ namespace lab8
 {
     internal static class Program
     {
+        public static string staff_id;
+        public static string password;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

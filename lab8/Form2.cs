@@ -12,7 +12,8 @@ namespace lab8
 {
     public partial class FormPersonalPage : Form
     {
-        public FormPersonalPage()
+        string staff_id;
+        public FormPersonalPage(string staff_id)
         {
             InitializeComponent();
         }
