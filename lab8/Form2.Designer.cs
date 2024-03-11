@@ -34,8 +34,7 @@
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.txtStaffName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvClasses = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            this.lvClasses = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -91,21 +90,22 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Classes";
             // 
-            // dgvClasses
+            // lvClasses
             // 
-            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Location = new System.Drawing.Point(118, 138);
-            this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.Size = new System.Drawing.Size(262, 150);
-            this.dgvClasses.TabIndex = 6;
-            this.dgvClasses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.lvClasses.HideSelection = false;
+            this.lvClasses.Location = new System.Drawing.Point(118, 138);
+            this.lvClasses.Name = "lvClasses";
+            this.lvClasses.Size = new System.Drawing.Size(262, 150);
+            this.lvClasses.TabIndex = 7;
+            this.lvClasses.UseCompatibleStateImageBehavior = false;
+            this.lvClasses.SelectedIndexChanged += new System.EventHandler(this.lvClasses_SelectedIndexChanged);
             // 
             // FormPersonalPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 337);
-            this.Controls.Add(this.dgvClasses);
+            this.ClientSize = new System.Drawing.Size(481, 324);
+            this.Controls.Add(this.lvClasses);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtStaffName);
             this.Controls.Add(this.txtStaffID);
@@ -115,7 +115,6 @@
             this.Name = "FormPersonalPage";
             this.Text = "Personal page";
             this.Load += new System.EventHandler(this.FormPersonalPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +128,6 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvClasses;
+        private System.Windows.Forms.ListView lvClasses;
     }
 }
