@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvClasses = new System.Windows.Forms.DataGridView();
+            this.dgvScoreBoard = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScoreBoard)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvClasses
+            // dgvScoreBoard
             // 
-            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Location = new System.Drawing.Point(52, 103);
-            this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.Size = new System.Drawing.Size(624, 313);
-            this.dgvClasses.TabIndex = 0;
+            this.dgvScoreBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScoreBoard.Location = new System.Drawing.Point(52, 103);
+            this.dgvScoreBoard.Name = "dgvScoreBoard";
+            this.dgvScoreBoard.Size = new System.Drawing.Size(452, 314);
+            this.dgvScoreBoard.TabIndex = 0;
+            this.dgvScoreBoard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasses_CellContentClick);
             // 
             // label1
             // 
@@ -78,20 +80,32 @@
             this.txtSubject.Size = new System.Drawing.Size(570, 20);
             this.txtSubject.TabIndex = 4;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(534, 103);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(173, 72);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // editPoint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 452);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.txtClass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvClasses);
+            this.Controls.Add(this.dgvScoreBoard);
             this.Name = "editPoint";
             this.Text = "Transcript";
             this.Load += new System.EventHandler(this.editPoint_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScoreBoard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,10 +113,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvClasses;
+        private System.Windows.Forms.DataGridView dgvScoreBoard;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

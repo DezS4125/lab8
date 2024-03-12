@@ -64,8 +64,8 @@ namespace lab8
             {
                 string subjectId = dgvClasses.Rows[e.RowIndex].Cells["subject_id"].Value?.ToString();
                 string classId = dgvClasses.Rows[e.RowIndex].Cells["class_id"].Value?.ToString();
-
-                MessageBox.Show($"Subject ID: {subjectId}\nClass ID: {classId}", "Row Details");
+                editPoint editPointForm = new editPoint(classId, subjectId);
+                editPointForm.ShowDialog();
             }
         }
 
